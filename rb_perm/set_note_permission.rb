@@ -2,33 +2,39 @@ $LOAD_PATH.unshift(File.dirname(__FILE__)) unless $LOAD_PATH.include?(File.dirna
 require 'rule_lib.rb'
 
 puts "set_note_permission included"
-# ca = PermissionRuleSet.find_by_code('artist')
-# nrs = PermissionRuleSet.create( :code=>'new_rule_set', :display_name => 'New Rule Set', :entity_type => 'HumanUser')
-# nrs.import_rules(PermissionRuleSet.dump_rules('artist'))
 
-# nrs.permission_rules.create(:rule_type=>'update_field_condition', :allow=>'true', :parameter_1=>'Note', :parameter_2=>'addressings_cc', :retrieve_value=>'{"path":"id", "relation":"is_not","values":[0]}')
-
-# nrs.save;
-class Condition_Update_Note_CC
-	def initialize(role)
-		@role = role
+class Condition_Update_Note < RuleRule
+	def rule0(act)
+		rt = "update_field_condition";
+		p1 = "Note";
+		p2 = nil;
+		p3 = "";
+		p4 = "";
+		allow = "true";
+		retrieve_value = '{"path":"user", "relation":"is","values":[{"type":"HumanUser","id":0,"valid":"logged_in_user_token"}]}';
+		run_rule2(rt, p1, p2, p3, p4, allow, retrieve_value, act)
 	end
 
 	def rule1(act)
 		rt = "update_field_condition";
 		p1 = "Note";
-		p2 = "addressings_cc";
+		p2 = "addressings_to";
 		p3 = "";
 		p4 = "";
 		allow = "true";
 		retrieve_value = '{"path":"id", "relation":"is_not","values":[0]}';
-		r=Rule.new(@role, rt, p1, p2, p3, p4, allow, retrieve_value)
+		run_rule2(rt, p1, p2, p3, p4, allow, retrieve_value, act)
+	end
 
-		if act == "c"
-		  r.create2
-		else
-			r.destroy2
-		end
+	def rule2(act)
+		rt = "update_field_condition";
+		p1 = "Note";
+		p2 = "sg_status_list";
+		p3 = "cmpt";
+		p4 = "";
+		allow = "true";
+		retrieve_value = '{ "logical_operator": "or", "conditions": [ {"path":"id", "relation":"is_not", "values":[null] } ] }';
+		run_rule3(rt, p1, p2, p3, p4, allow, retrieve_value, act)
 	end
 end
 
