@@ -3,6 +3,7 @@
 
 $LOAD_PATH.unshift(File.dirname(__FILE__)) unless $LOAD_PATH.include?(File.dirname(__FILE__))
 require 'set_note_permission.rb'
+require 'yaml'
 
 _permission_group = "artist"
 _action="d"
