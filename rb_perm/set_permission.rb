@@ -4,13 +4,13 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__)) unless $LOAD_PATH.include?(File.dirname(__FILE__))
 require 'set_note_permission.rb'
 
-_permission_group = "new_rule_set"
+_permission_group = "artist"
+_action="d"
 
-#r=RuleBase.new(_permission_group)
-#r.show_rule(1289)
+r=RuleBase.new(role:_permission_group, rule_id:491)
+r.show_rule()
 
-_action="c"
-note=Condition_Update_Note.new(_permission_group)
-#note.rule0(_action)
-#note.rule1(_action)
-#note.rule2(_action)
+note=Condition_Update_Note.new(role:_permission_group, action:_action)
+#note.rule0()
+note.rule1()
+note.rule2()
