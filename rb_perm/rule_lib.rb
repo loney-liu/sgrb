@@ -1,3 +1,5 @@
+require 'yaml'
+
 puts "rule_lib inc=beginluded"
 
 class RuleBase
@@ -19,11 +21,33 @@ class RuleBase
 	    @retrieve_value=nil
 	end
 
-	def run_rule()
-		if @act == "c"
-		  create
-		else
-		  destroy
+	def read_rules(rules)
+		rules['rules'].each_with_index do |sub_rules, index|
+			sub_rules.each_with_index do |rs, i|
+				if !rs.instance_of?(String)
+					rs.each do |r|
+						if !r.instance_of?(String)
+							r.each do |m|
+								if !m.instance_of?(String)
+								    @rule_type = m["rule_type"]
+									@parameter_1 = m["parameter_1"] == '' ? nil : m["parameter_1"]
+									@parameter_2 = m["parameter_2"] == '' ? nil : m["parameter_2"]
+									@parameter_3 = m["parameter_3"] == '' ? nil : m["parameter_3"]
+									@parameter_4 = m["parameter_4"] == '' ? nil : m["parameter_4"]
+									@allow = m["allow"];
+									@retrieve_value = m["retrieve_value"]== '' ? nil : m["retrieve_value"]
+									
+									if @act == "c"
+									  create
+									else
+									  destroy
+									end
+								end
+							end
+						end
+					end
+				end
+			end
 		end
 	end
 
