@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"para",
+				"parameter_1"
+			],
+			[
+				"sho",
+				"show_para"
+			],
+			[
+				"pa",
+				"parameter_2"
+			],
+			[
+				"rle",
+				"rule_type"
+			],
+			[
+				"par",
+				"parameter_2"
+			],
+			[
+				"show",
+				"show_detail"
+			],
+			[
+				"_ne",
+				"_new_code"
+			],
+			[
+				"api_",
+				"api_script"
+			],
+			[
+				"ap",
+				"api_script"
+			],
+			[
+				"set_",
+				"set_language"
+			],
+			[
+				"set",
+				"set_license"
+			],
+			[
+				"api",
+				"api_key"
+			],
+			[
 				"va",
 				"validate"
 			],
@@ -32,10 +80,6 @@
 				"New"
 			],
 			[
-				"par",
-				"parameter_1"
-			],
-			[
 				"param",
 				"parameter_2"
 			],
@@ -59,33 +103,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "rb_perm/set_note_permission.rb",
-			"settings":
-			{
-				"buffer_size": 1092,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "rb_perm/rule_lib.rb",
-			"settings":
-			{
-				"buffer_size": 3860,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "rb_perm/set_permission.rb",
-			"settings":
-			{
-				"buffer_size": 393,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -191,12 +208,18 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/loney/Git/sgrb/rb_perm"
+		"/Users/loney/Git/sgrb/rb_perm",
+		"/Users/loney/Git/sgrb/rb_setting"
 	],
 	"file_history":
 	[
+		"/Users/loney/Git/sgrb/rb_perm/rules.yml",
 		"/Users/loney/Git/sgrb/rb_perm/rule_lib.rb",
+		"/Users/loney/Git/sgrb/rb_perm/set_permission.rb",
+		"/Users/loney/Git/sgrb/rb_perm/set_note_permission.rb",
+		"/Users/loney/Git/sgrb/rb_setting/settings.rb",
 		"/Users/loney/Git/sgrb/rb_perm/create_permission_group.rb",
+		"/Users/loney/Git/sgrb/rb_setting/set_lib.rb",
 		"/Users/loney/Git/sgrb/sgrb.sublime-workspace",
 		"/Users/loney/Git/sgrb/sgrb.sublime-project",
 		"/Users/loney/ShotgunPKG/set_note_permission.rb",
@@ -283,7 +306,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -297,6 +320,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ruleaction",
 			"r"
 		],
 		"highlight": true,
@@ -315,98 +339,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "rb_perm/set_note_permission.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1092,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								192,
-								192
-							]
-						],
-						"settings":
-						{
-							"markdonw_live_preview_last_run": 1520737849.4,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "rb_perm/rule_lib.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3860,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								913,
-								913
-							]
-						],
-						"settings":
-						{
-							"markdonw_live_preview_last_run": 1520774899.79,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "rb_perm/set_permission.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 393,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								329,
-								329
-							]
-						],
-						"settings":
-						{
-							"markdonw_live_preview_last_run": 1520738750.58,
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

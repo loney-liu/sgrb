@@ -4,13 +4,11 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__)) unless $LOAD_PATH.include?(File.dirname(__FILE__))
 require 'rule_lib.rb' 
 
-_rule_yml = "script/rb/rules.yml"
-_permission_group = "artist"
-_action="c"
+yml_file = 'rules.yml'
+yml_path = File.join(File.dirname(File.expand_path(__FILE__)), yml_file)
 
-r=RuleBase.new(role:_permission_group, rule_id:491)
+r=RuleBase.new(yml:yml_path, rule_id:491)
 r.show_rule()
 
-set_rule=RuleBase.new(role:_permission_group, action:_action)
-read_rules = YAML.load_file(_rule_yml)
-set_rule.read_rules(read_rules)
+rule=RuleBase.new(yml:yml_path)
+rule.set_rules()

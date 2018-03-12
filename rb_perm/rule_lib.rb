@@ -1,17 +1,17 @@
 require 'yaml'
 
-puts "rule_lib inc=beginluded"
+puts "rule_lib included"
 
 class RuleBase
 	def initialize(para={})
 		puts
 		puts "Rule base init ..."
 		puts
-		@role = para[:role]
-		@act = para[:action]
+		@role = nil
+		@act = nil
 		@rule_id = para[:rule_id]
 
-		@nrs = PermissionRuleSet.find_by_code(para[:role])
+		
 	    @rule_type=nil
 	    @parameter_1=nil
 	    @parameter_2=nil
@@ -19,10 +19,22 @@ class RuleBase
 	    @parameter_4=nil
 	    @allow=nil
 	    @retrieve_value=nil
+
+	    @rule_yml = para[:yml]    
+	    @rules = nil
+
+	    setup
 	end
 
-	def read_rules(rules)
-		rules['rules'].each_with_index do |sub_rules, index|
+	def setup()
+		@rules = YAML.load_file(@rule_yml)
+		@role = @rules["permission_group"]
+		@act = @rules["action"]
+		@nrs = PermissionRuleSet.find_by_code(@role)
+	end
+
+	def set_rules()
+		@rules['rules'].each_with_index do |sub_rules, index|
 			sub_rules.each_with_index do |rs, i|
 				if !rs.instance_of?(String)
 					rs.each do |r|
@@ -37,7 +49,7 @@ class RuleBase
 									@allow = m["allow"];
 									@retrieve_value = m["retrieve_value"]== '' ? nil : m["retrieve_value"]
 									
-									if @act == "c"
+									if @act == "create"
 									  create
 									else
 									  destroy
