@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"yml_",
+				"yml_path"
+			],
+			[
+				"yml",
+				"yml_path"
+			],
+			[
 				"para",
 				"parameter_1"
 			],
@@ -213,8 +221,8 @@
 	],
 	"file_history":
 	[
-		"/Users/loney/Git/sgrb/rb_perm/rules.yml",
 		"/Users/loney/Git/sgrb/rb_perm/rule_lib.rb",
+		"/Users/loney/Git/sgrb/rb_perm/rules.yml",
 		"/Users/loney/Git/sgrb/rb_perm/set_permission.rb",
 		"/Users/loney/Git/sgrb/rb_perm/set_note_permission.rb",
 		"/Users/loney/Git/sgrb/rb_setting/settings.rb",
@@ -306,7 +314,7 @@
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
